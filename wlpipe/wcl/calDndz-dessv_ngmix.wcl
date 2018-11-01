@@ -1,0 +1,39 @@
+<file>
+    <catalogs>
+        cat1 = shape.fits
+        cat2 = wlinfo.fits
+        cat3 = pdf.fits
+    </catalogs>
+    <output>
+        file1 = dndz1.txt
+        file2 = dndz2.txt
+    </output>
+</file>
+<wrapper>
+    pipeline = weaklens
+    pipever = 1.2.3
+</wrapper>
+<exec_1>
+    <vars>
+        id = cat1:COADD_OBJECTS_ID
+        w  = cat1:W
+#        zm = cat3:Z_MEAN
+    </vars>
+    <flags>
+        flg1 = cat2:SVA1_FLAG:%s==0
+        flg2 = cat2:NGMIX_FLAG:%s==0
+    </flags>
+    <pdfs>
+        startcol = DNDZ_STARTCOL
+        nbins = DNDZ_NBINS
+        zlo = DNDZ_ZLO
+        zhi = DNDZ_ZHI
+        zm = Z_MEAN
+    </pdfs>
+    <zbins>
+        nbins = NUM_TOMO_BINS
+        zlo = TOMO_BIN_LO_EDGES
+        zhi = TOMO_BIN_HI_EDGES
+        caltomo = CAL_TOMO_BINS
+    </zbins>
+</exec_1>

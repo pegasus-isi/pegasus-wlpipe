@@ -1,0 +1,42 @@
+<file>
+    <catalogs>
+        cat1 = shape.fits
+        cat2 = wlinfo.fits
+        cat3 = pzpoint.fits
+    </catalogs>
+    <output>
+        prefix = OUTPUT_PREFIX
+    </output>
+</file>
+<wrapper>
+    pipeline = weaklens
+    pipever = 1.2.3
+</wrapper>
+<exec_1>
+    <vars>
+        id = cat1:COADD_OBJECTS_ID
+        e1 = cat1:E_1 
+        e2 = cat1:E_2
+        m  = cat1:SENS_AVG
+        w  = cat1:W
+        ra = cat2:RA
+        dec= cat2:DEC
+        iz = cat2:PHOTOZ_BIN
+        zm = cat3:Z_MEAN
+    </vars>
+    <flags>
+        flg1 = cat2:SVA1_FLAG:%s==0
+        flg2 = cat2:NGMIX_FLAG:%s==0
+    </flags>
+    <zbins>
+        nbins = NUM_TOMO_BINS
+        zlo = TOMO_BIN_LO_EDGES
+        zhi = TOMO_BIN_HI_EDGES
+        caltomo = CAL_TOMO_BINS
+    </zbins>
+    <neff>
+        calneff = CAL_NEFF
+        omgdeg = OMEGA_DEG
+    </neff>
+    sens_mpone = 0
+</exec_1>

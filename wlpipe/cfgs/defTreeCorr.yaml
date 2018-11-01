@@ -1,0 +1,64 @@
+#file_name: GGIN1
+#file_name2: GGIN2
+
+file_type: FITS
+
+hdu: 1
+
+first_row: 1
+last_row: -1
+
+#ra_col: RA
+#dec_col: DEC
+#ra_units: degrees
+#dec_units: degrees
+#g1_col: S_1
+#g2_col: S_2
+#w_col: W
+
+# Sometimes there are issues with the sign conventions of gamma.  If you need to flip 
+# the sign of g1 or g2, you may do that with flip_g1 or flip_g2 (or both).
+#flip_g1: false
+#flip_g2: false
+
+# The bins for the histogram may be defined by setting 3 of the following 
+# 4 parameters:
+#     min_sep  = the left edge of the first bin
+#     max_sep  = the right edge of the last bin
+#     nbins    = the number of bins
+#     bin_size = the width of the bins in log(sep)
+#min_sep: 2.
+#max_sep: 300.
+#nbins: 6
+#bin_slop: 0.059872647357406522
+
+#min_sep: 2.230
+#max_sep: 335.56
+#nbins: 6
+#bin_slop: 0.059872647357406522
+
+# sep_units specifies the units to use for min_sep and max_sep.
+# It is also the units of R in the output file.
+# If omitted, radians is assumed.  (So when using x,y, you can just omit both
+# this and x_units,y_units, and the units will match up and can be arbitrary.)
+sep_units: arcmin
+
+####
+#### Parameters about the output files
+####
+
+#gg_file_name: GGOUT
+
+# verbose specifies how much progress output the code should emit.
+# 0 = no output unless there is an error
+# 1 = warnings (This is the default if not specified)
+# 2 = progress information
+# 3 = extra debugging output
+verbose: 2
+
+#log_file: GGLOG
+
+# num_threads = the number of threads to use.
+# The default is to let OpenMP determine an appropriate number of threads automatically.
+# Usually this matches the number of cores your system has.
+#num_threads: 1

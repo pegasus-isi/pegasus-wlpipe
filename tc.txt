@@ -1,0 +1,126 @@
+tr doTomoBinning {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/wlpipe/bin/doTomoBinning.py"
+        arch "x86_64"
+        os "LINUX"
+
+        # INSTALLED means pfn refers to path in the container.
+        # STAGEABLE means the executable can be staged into the container
+        type "INSTALLED"
+
+        #optional attribute to specify the container to use
+        container "sl7-cos"
+    }
+}
+
+tr calDndz {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/wlpipe/bin/calDndz.py"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr sed {
+    site condorpool {
+        pfn "/bin/sed"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr cat {
+    site condorpool {
+        pfn "/bin/cat"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr mkCosmoLikeIni {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/wlpipe/bin/mkCosmoLikeIni.py"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr cosmolike {
+    site condorpool {
+        pfn "/opt/astro/cosmolike/top-level/des_mpp/multi_covariances_real_mpp"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr treecorr {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/ups/python/v2_7_11/Linux64bit+3.10-2.17/bin/corr2"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr catFilesInList {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/wlpipe/bin/catFilesInList.py"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr mkCosmosisFits
+ {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/wlpipe/bin/mkCosmosisFits.py"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+tr plotCosmosisFits
+ {
+    site condorpool {
+        pfn "/opt/astro/cosmosis/wlpipe/bin/plotCosmosisFits.py"
+        arch "x86_64"
+        os "LINUX"
+        type "INSTALLED"
+        container "sl7-cos"
+    }
+}
+
+
+
+cont sl7-cos{
+     # can be either docker or singularity
+     type "singularity"
+
+     # URL to image in a docker|singularity hub OR
+     # URL to an existing docker image exported as a tar file or singularity image
+     #image "docker:///rynge/montage:latest" 
+     image "file:///lizard/scratch-90-days/adass-demo/sl7cos.img"
+
+     # optional site attribute to tell pegasus which site tar file
+     # exists. useful for handling file URL's correctly
+     image_site "condorpool"
+  
+     # environment to be set when the job is run in the container
+     # only env profiles are supported
+     #profile env "JAVA_HOME" "/opt/java/1.6"	    
+}

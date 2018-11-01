@@ -1,0 +1,26 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Input data/survey catalogs
+# You can get these data files from:
+# http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/sva1_gold_r1.0_ngmix.fits.gz
+# http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/sva1_gold_r1.0_wlinfo.fits.gz
+# http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/sva1_gold_r1.0_skynet_point.fits.gz
+# http://desdr-server.ncsa.illinois.edu/despublic/sva1_files/sva1_gold_r1.0_skynet_pdf.fits.gz
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+shape.fits file:///${DIR}/input/DES/SV/sva1_gold_r1.0_ngmix.fits site="local"
+wlinfo.fits file:///${DIR}/input/DES/SV/sva1_gold_r1.0_wlinfo.fits site="local"
+pzpoint.fits file:///${DIR}/input/DES/SV/sva1_gold_r1.0_skynet_point.fits site="local"
+pdf.fits file:///${DIR}/input/DES/SV/sva1_gold_r1.0_skynet_pdf.fits site="local"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Ascii configuration and reference data for comparison plots
+# (In this directory, you will find them in the ./wlpipe subdirectory)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+doTomoBinning-dessv.wcl file://${DIR}/wlpipe/wcl/doTomoBinning-dessv_ngmix.wcl site="local"
+calDndz-dessv.wcl file://${DIR}/wlpipe/wcl/calDndz-dessv_ngmix.wcl site="local"
+defCosmoLike.ini file://${DIR}/wlpipe/cfgs/defCosmoLike.ini site="local"
+defTreeCorr.yaml file://${DIR}/wlpipe/cfgs/defTreeCorr.yaml site="local"
+REF_dessv_ngmix_xi_cov_tomo.dat file://${DIR}/wlpipe/ref/REF_dessv_ngmix_xi_cov_tomo.dat site="local"
+REF_dessv_ngmix_xi_tomo.dat file://${DIR}/wlpipe/ref/REF_dessv_ngmix_xi_tomo.dat site="local"
+REF_dessv_ngmix_skynet_pz.dat file://${DIR}/wlpipe/ref/REF_dessv_ngmix_skynet_pz.dat site="local"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# End of initial input and config files
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
