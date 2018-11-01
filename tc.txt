@@ -114,11 +114,11 @@ cont sl7-cos{
      # URL to image in a docker|singularity hub OR
      # URL to an existing docker image exported as a tar file or singularity image
      #image "docker:///rynge/montage:latest" 
-     image "file:///lizard/scratch-90-days/adass-demo/sl7cos.img"
+     image "http://download.pegasus.isi.edu/apps/wlpipe/sl7cos.img"
 
      # optional site attribute to tell pegasus which site tar file
      # exists. useful for handling file URL's correctly
-     image_site "condorpool"
+     image_site "pegasus"
   
      # environment to be set when the job is run in the container
      # only env profiles are supported
