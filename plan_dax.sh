@@ -12,8 +12,14 @@ DAXFILE=$1
 # shared directory on the condor pool
 # update accordingly
 SHARED_DIR=/lizard/scratch-90-days/adass-demo
+
+# directory where survey catalog files are downloaded
+# Look at rc.txt to see where to download the file from
+SURVEY_DIR=${DIR}/input/DES/SV
+
 export SHARED_DIR
 export DIR
+export SURVEY_DIR
 
 # This command tells Pegasus to plan the workflow contained in 
 # dax file passed as an argument. The planned workflow will be stored
