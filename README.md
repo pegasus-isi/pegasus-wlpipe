@@ -19,18 +19,18 @@ This pipeline is an example of a typical gravitational weak lensing analysis. It
 
 ## Description and default values of parameters in daxgen_dessv.py
 
-nbtomo=3			                number of tomographic bins
-zbins"0.30,0.55,0.83,1.30"	edges of tomographic bins
+* nbtomo=3			                number of tomographic bins
+* zbins"0.30,0.55,0.83,1.30"	edges of tomographic bins
 
-pz_startcol = "cat3:3"	starting column of PDF in input fits file for calDndz
-pz_nbins = 200		       number of bins in redshift distributions from calDndz
-pz_zlo = 0.005         lower limit of redshift distribution from calDndz
-pz_zhi = 1.8           upper limit of redshift distribution from calDndz
+* pz_startcol = "cat3:3"	starting column of PDF in input fits file for calDndz
+* pz_nbins = 200		       number of bins in redshift distributions from calDndz
+* pz_zlo = 0.005         lower limit of redshift distribution from calDndz
+* pz_zhi = 1.8           upper limit of redshift distribution from calDndz
 
-thetamin = 2.0		   minimum angular separation for TreeCorr
-thetamax = 300.		  maximum angular separation for TreeCorr
-ntheta = 6		       number of angular separation bins
-bin_slop = 0.05987	treecorr parameter that controls accuracy of results,
+* thetamin = 2.0		   minimum angular separation for TreeCorr
+* thetamax = 300.		  maximum angular separation for TreeCorr
+* ntheta = 6		       number of angular separation bins
+* bin_slop = 0.05987	treecorr parameter that controls accuracy of results,
 
 ## Generate and plan a workflow
 
