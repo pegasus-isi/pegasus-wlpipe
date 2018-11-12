@@ -117,7 +117,7 @@ There will be a collection of png files created
 There are three versions of each of the above files (corresponding to 
 the three iterations over mkCosmosisFits):
 
-* **dessv_covg*:** using Gaussian-only covariance from CosmoLike
-* **dessv_covng*:** using  non-Gaussian contributions to covariance from CosmoLike
-* **dessv_*:** using survey-provided covariance
+* dessv_covg*: using Gaussian-only covariance from CosmoLike
+* dessv_covng*: using  non-Gaussian contributions to covariance from CosmoLike
+* dessv_*: using survey-provided covariance
 
