@@ -43,4 +43,57 @@ After TreeCorr and CosmoLike complete, their results are each concatenated into 
 
 daxgen_dessv.py is a python dax generator for this pipeline. 
  
-    ./generate_dax.sh wlpipe.dax
+    ./generate_dax.sh wlpipe.dax 
+    Generated dax wlpipe.dax
+
+The above created the pipeline description in the portable Pegasus format DAX.
+We can now plan and submit this workflow
+
+     ./plan_dax.sh wlpipe.dax 
+     2018.11.12 09:27:25.467 PST: [INFO]  Planner invoked with following arguments --conf pegasus.properties --dax wlpipe.dax --dir /local-scratch/vahi/work/dess/pegasus-wlpipe/submit --output-dir /local-scratch/vahi/work/dess/pegasus-wlpipe/output --cleanup none --cluster label --force --sites condorpool --staging-site condorpool -v --submit  
+    2018.11.12 09:27:25.996 PST: [INFO] event.pegasus.parse.dax dax.id /local-scratch/vahi/work/dess/pegasus-wlpipe/wlpipe.dax  - STARTED 
+    2018.11.12 09:27:25.997 PST: [INFO] event.pegasus.parse.dax dax.id /local-scratch/vahi/work/dess/pegasus-wlpipe/wlpipe.dax  (0.001 seconds) - FINISHED 
+    2018.11.12 09:27:26.000 PST: [INFO] event.pegasus.parse.dax dax.id /local-scratch/vahi/work/dess/pegasus-wlpipe/wlpipe.dax  - STARTED 
+    2018.11.12 09:27:26.142 PST: [INFO] event.pegasus.add.data-dependencies dax.id wlpipe_dessv_0  - STARTED 
+    2018.11.12 09:27:26.145 PST: [INFO] event.pegasus.add.data-dependencies dax.id wlpipe_dessv_0  (0.003 seconds) - FINISHED 
+    2018.11.12 09:27:26.145 PST: [INFO] event.pegasus.parse.dax dax.id /local-scratch/vahi/work/dess/pegasus-wlpipe/wlpipe.dax  (0.145 seconds) - FINISHED 
+    ....
+    2018.11.12 09:27:26.381 PST: [INFO] event.pegasus.generate.transfer-nodes dax.id wlpipe_dessv_0  - STARTED 
+    2018.11.12 09:27:26.471 PST: [INFO] event.pegasus.generate.transfer-nodes dax.id wlpipe_dessv_0  (0.09 seconds) - FINISHED 
+    2018.11.12 09:27:26.473 PST: [INFO] event.pegasus.generate.workdir-nodes dax.id wlpipe_dessv_0  - STARTED 
+    2018.11.12 09:27:26.480 PST: [INFO] event.pegasus.generate.workdir-nodes dax.id wlpipe_dessv_0  (0.007 seconds) - FINISHED 
+    2018.11.12 09:27:26.480 PST: [INFO] event.pegasus.refinement dax.id wlpipe_dessv_0  (0.231 seconds) - FINISHED 
+    2018.11.12 09:27:26.507 PST: [INFO]  Generating codes for the executable workflow 
+    2018.11.12 09:27:26.507 PST: [INFO] event.pegasus.code.generation dax.id wlpipe_dessv_0  - STARTED 
+    2018.11.12 09:27:26.823 PST:    
+    2018.11.12 09:27:26.828 PST:   ----------------------------------------------------------------------- 
+    2018.11.12 09:27:26.833 PST:   File for submitting this DAG to HTCondor           : wlpipe_dessv-0.dag.condor.sub 
+    2018.11.12 09:27:26.839 PST:   Log of DAGMan debugging messages                 : wlpipe_dessv-0.dag.dagman.out 
+    2018.11.12 09:27:26.844 PST:   Log of HTCondor library output                     : wlpipe_dessv-0.dag.lib.out 
+    2018.11.12 09:27:26.849 PST:   Log of HTCondor library error messages             : wlpipe_dessv-0.dag.lib.err 
+    2018.11.12 09:27:26.854 PST:   Log of the life of condor_dagman itself          : wlpipe_dessv-0.dag.dagman.log 
+    2018.11.12 09:27:26.859 PST:    
+    2018.11.12 09:27:26.865 PST:   -no_submit given, not submitting DAG to HTCondor.  You can do this with: 
+    2018.11.12 09:27:26.875 PST:   ----------------------------------------------------------------------- 
+    2018.11.12 09:27:26.884 PST: [INFO] event.pegasus.code.generation dax.id wlpipe_dessv_0  (0.377 seconds) - FINISHED 
+    2018.11.12 09:27:27.736 PST:   Your database is compatible with Pegasus version: 4.9.0 
+    2018.11.12 09:27:27.932 PST:   Submitting to condor wlpipe_dessv-0.dag.condor.sub 
+    2018.11.12 09:27:28.019 PST:   Submitting job(s). 
+    2018.11.12 09:27:28.024 PST:   1 job(s) submitted to cluster 1058650. 
+    2018.11.12 09:27:28.029 PST:    
+    2018.11.12 09:27:28.034 PST:   Your workflow has been started and is running in the base directory: 
+    2018.11.12 09:27:28.040 PST:    
+    2018.11.12 09:27:28.045 PST:     /local-scratch/vahi/work/dess/pegasus-wlpipe/submit/vahi/pegasus/wlpipe_dessv/run0001 
+    2018.11.12 09:27:28.050 PST:    
+    2018.11.12 09:27:28.055 PST:   *** To monitor the workflow you can run *** 
+    2018.11.12 09:27:28.060 PST:    
+    2018.11.12 09:27:28.066 PST:     pegasus-status -l /local-scratch/vahi/work/dess/pegasus-wlpipe/submit/vahi/pegasus/wlpipe_dessv/run0001 
+    2018.11.12 09:27:28.071 PST:    
+    2018.11.12 09:27:28.076 PST:   *** To remove your workflow run *** 
+    2018.11.12 09:27:28.081 PST:    
+    2018.11.12 09:27:28.086 PST:     pegasus-remove /local-scratch/vahi/work/dess/pegasus-wlpipe/submit/vahi/pegasus/wlpipe_dessv/run0001 
+    2018.11.12 09:27:28.092 PST:    
+    2018.11.12 09:27:28.139 PST:   Time taken to execute is 2.722 seconds 
+    2018.11.12 09:27:28.139 PST: [INFO] event.pegasus.planner planner.version 4.9.0  (2.688 seconds) - FINISHED 
+    
+In the above output, you will see helpful pegasus commands that you can invoke to monitor and remove your workflow
