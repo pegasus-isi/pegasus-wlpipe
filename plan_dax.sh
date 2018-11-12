@@ -35,5 +35,5 @@ pegasus-plan --conf pegasus.properties \
     --force \
     --sites condorpool \
     --staging-site condorpool \
-    -vv
-#    --submit
+    -v \
+    --submit
