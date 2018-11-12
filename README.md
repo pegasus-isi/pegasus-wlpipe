@@ -110,14 +110,14 @@ There will be a collection of png files created
        output/dessv_cov.png  output/dessv_xipm.png  output/dessv_covg_pz.png 
        output/dessv_covng_cov.png  output/dessv_covng_xipm.png  output/dessv_pz.png
 
-* _pz.png: redshift distributions from calDndz
-* _xipm.png: 2pt shear correlation functions from TreeCorr
-* _cov.png: covariance from the CosmoLike
+* ***_pz.png:** redshift distributions from calDndz
+* ***_xipm.png:** 2pt shear correlation functions from TreeCorr
+* ***_cov.png:** covariance from the CosmoLike
 
 There are three versions of each of the above files (corresponding to 
 the three iterations over mkCosmosisFits):
 
-dessv_covg*: using Gaussian-only covariance from CosmoLike
-dessv_covng*: using  non-Gaussian contributions to covariance from CosmoLike
-dessv_*: using survey-provided covariance
+* **dessv_covg*:** using Gaussian-only covariance from CosmoLike
+* **dessv_covng*:** using  non-Gaussian contributions to covariance from CosmoLike
+* **dessv_*:** using survey-provided covariance
 
