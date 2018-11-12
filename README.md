@@ -96,4 +96,28 @@ We can now plan and submit this workflow
     2018.11.12 09:27:28.139 PST:   Time taken to execute is 2.722 seconds 
     2018.11.12 09:27:28.139 PST: [INFO] event.pegasus.planner planner.version 4.9.0  (2.688 seconds) - FINISHED 
     
-In the above output, you will see helpful pegasus commands that you can invoke to monitor and remove your workflow
+In the above output, you will see helpful invocations of pegasus commands that you can invoke
+* **pegasus-status** - track status of your workflow
+* **pegasus-remove** - remove your running workflow
+
+
+## Outputs of the workflow
+The outputs appear in the ./output directory
+There will be a collection of png files created
+      
+      -bash-4.2$ ls output/*png
+       output/dessv_covg_cov.png  output/dessv_covg_xipm.png  output/dessv_covng_pz.png   
+       output/dessv_cov.png  output/dessv_xipm.png  output/dessv_covg_pz.png 
+       output/dessv_covng_cov.png  output/dessv_covng_xipm.png  output/dessv_pz.png
+
+* _pz.png: redshift distributions from calDndz
+* _xipm.png: 2pt shear correlation functions from TreeCorr
+* _cov.png: covariance from the CosmoLike
+
+There are three versions of each of the above files (corresponding to 
+the three iterations over mkCosmosisFits):
+
+dessv_covg*: using Gaussian-only covariance from CosmoLike
+dessv_covng*: using  non-Gaussian contributions to covariance from CosmoLike
+dessv_*: using survey-provided covariance
+
