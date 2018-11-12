@@ -24,6 +24,13 @@ After both doTomoBinning and calDndz are done, CosmoLike is launched to calculat
 
 After TreeCorr and CosmoLike complete, their results are each concatenated into two separate files which, together with the redshift distributions from calDndz, serve as input for mkCosmosisFits.  This last step produces an output fits file that has all the relevant information arranged in a format supported by the CosmoSIS framework used to extract the cosmological parameters.
 
+In this example, we run mkCosmosisFits three times since we want to produce three different versions of the FITS files that are used as input for the final stage where we use the CosmoSIS framework to  extract the cosmological parameters.  The only different between each version of the FITS file is in the covariance matrix:
+
+1. using the original survey-provided covariance (same one used in the  Survey's published results).  This is bascially for reference.
+2. using the analytical Gaussian-only covariance from CosmoLike
+3. using the analytical covariance from CosmoLike that also include non-Gaussian contributions.
+
+
 ## Description and default values of parameters in daxgen_dessv.py
 
 * nbtomo=3			                number of tomographic bins
