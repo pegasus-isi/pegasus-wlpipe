@@ -30,7 +30,7 @@ pegasus-plan --conf pegasus.properties \
     --dax $DAXFILE \
     --dir $DIR/submit \
     --output-dir $DIR/output \
-    --cleanup none \
+    --cleanup inplace \
     --cluster label \
     --force \
     --sites condorpool \
